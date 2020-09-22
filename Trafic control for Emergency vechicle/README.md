@@ -10,7 +10,7 @@
 
 <h3> screen shot of the project </h3>
 
-<img src="screenshot/Frame 2" width="40%">
+<img src="screenshot/Frame 2.png" width="40%">
 
 
-<img src="screenshot/Frame 3" width="40%">
+<img src="screenshot/Frame 3.png" width="40%">
