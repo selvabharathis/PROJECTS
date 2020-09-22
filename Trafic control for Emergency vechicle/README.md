@@ -8,7 +8,7 @@
   <li> personal digital assistance (android device)</li>
 </ul>
 
-<h3> screen shot of the project </h3>
+<h3> Screen shot of the project </h3>
 
 <img src="screenshot/Frame 2.png" width="40%">
 
