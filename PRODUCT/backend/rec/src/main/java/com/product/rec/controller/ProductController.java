@@ -24,15 +24,13 @@ public class ProductController {
 
 
     @GetMapping(value="/getProducts")
-    public ResponseEntity<List<ProductDTO>> getAllProducts() throws Exception {
-        List<ProductDTO> productList = productService.getAllProducts();
-        return new ResponseEntity<>(productList, HttpStatus.OK);
+    public List<ProductDTO> getAllProducts() throws Exception {
+        return productService.getAllProducts();
     }
 
     @GetMapping(value="/getProduct/{productId}")
-    public ResponseEntity<ProductDTO> getProduct(@PathVariable Long productId) throws Exception{
-        ProductDTO productDTO = productService.getProduct(productId);
-        return new ResponseEntity<>(productDTO,HttpStatus.OK);
+    public ProductDTO getProduct(@PathVariable Long productId) throws Exception{
+        return productService.getProduct(productId);
     }
 
     @PostMapping(value = "/addNewProduct")
