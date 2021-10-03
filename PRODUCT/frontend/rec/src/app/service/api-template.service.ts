@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,7 +11,11 @@ export class ApiTemplateService {
 
   public getData<T>(requestUrl: string): Observable<T>{
     console.log(`get call`,requestUrl);
-    return this.http.get<T>(requestUrl);
+    return this.http.get<T>(requestUrl,{
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+      })
+    });
   }
 
   public postData<T>(requestUrl:string, data: any){

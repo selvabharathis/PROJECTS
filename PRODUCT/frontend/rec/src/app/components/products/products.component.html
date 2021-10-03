@@ -1,1 +1,20 @@
-<p>products works!</p>
+<br><br>
+<div *ngIf="products.length!=null && products.length>0">
+    <div class="row">
+        <div class="card-group">
+        <div *ngFor="let product of products">
+            <div class="card">
+                <img class="card-img-top" [src]="'assets/'+product.productName+'.jpg'">
+                <div class="card-body">
+                  <h5 class="card-title"><center>{{product.productName}}</center></h5>
+                  <p class="card-text"><b>Price :</b> {{product.productPrice}}Rs</p>
+                  <p class="card-text"><b>Available :</b> {{product.productAvailability}}</p>
+                  <p class="card-text"><b>Description :</b> {{product.description}}</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    </div>
+
+</div>
+
