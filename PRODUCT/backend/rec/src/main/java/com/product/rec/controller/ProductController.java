@@ -34,7 +34,7 @@ public class ProductController {
         return productService.getProduct(productId);
     }
 
-    @PostMapping(value = "/addNewProduct")
+    @PostMapping(value = "/addNewProduct",produces = "application/json")
     public ResponseEntity<String> saveProduct(@RequestBody ProductDTO product) throws Exception{
         Long productId = productService.addProduct(product);
         String successMessage = environment.getProperty("API.INSERT_SUCCESS") + productId;
