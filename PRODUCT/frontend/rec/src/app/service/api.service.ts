@@ -27,12 +27,12 @@ export class ApiService {
 
   saveProduct(product: Product){
     let url = environment.productAPIUrl + `/addNewProduct`;
-    return this.apiTemplateService.postData(url,product);
+    return this.apiTemplateService.postData<Product>(url,product);
   }
 
   updateProduct(product: Product){
     let url = environment.productAPIUrl + `/updateProduct/${product.productId}`;
-    return this.apiTemplateService.putData(url,product);
+    return this.apiTemplateService.putData<Product>(url,product);
   }
 
 }
