@@ -1,0 +1,7 @@
+input,textarea{
+    width:fit-content;
+}
+
+.deleteProduct{
+    padding-left: 80px;
+}
