@@ -1,0 +1,12 @@
+.card-img-top {
+    width: 15vw;
+    height: 15vw;
+    object-fit: contain;
+}
+.card-body{
+    max-width:fit-content;
+    max-height: fit-content;
+}
+.card{
+    margin: 30px;
+}
