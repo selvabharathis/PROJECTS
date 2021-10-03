@@ -7,6 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class ApiTemplateService {
 
+//   public httpOptions = {
+//     headers: new HttpHeaders({
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//     })
+// };
+
   constructor(private http: HttpClient) { }
 
   public getData<T>(requestUrl: string): Observable<T>{
@@ -20,12 +27,12 @@ export class ApiTemplateService {
 
   public postData<T>(requestUrl:string, data: any){
     console.log(`post call`,requestUrl);
-    return this.http.post<T>(requestUrl,data);
+    return this.http.post<T>(requestUrl,data,{ responseType: 'text' as 'json' });
   }
 
-  public putData(requestUrl:string, data?: any){
+  public putData<T>(requestUrl:string, data?: any){
     console.log(`put call`,requestUrl);
-    return this.http.put(requestUrl,data);
+    return this.http.put<T>(requestUrl,data,{ responseType: 'text' as 'json' });
   }
 
   public deleteData(requestUrl: string){

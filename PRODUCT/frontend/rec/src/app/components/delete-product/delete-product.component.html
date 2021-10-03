@@ -1,1 +1,19 @@
-<p>delete-product works!</p>
+<div class="deleteProduct">
+  <div class="card bg-dark text-white m-1 mt-5">
+    <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Product Id</label>
+          <div class="col-sm-1">
+            <input type="text" class="form-control" placeholder="Enter product Id" [(ngModel)]="productId" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary" [disabled]="!productId">Delete Product</button>
+          </div>
+        </div>
+    </form>
+</div>
+

@@ -1,1 +1,52 @@
-<p>update-product works!</p>
+<div class="updateProduct">
+  <div class="card bg-dark text-white m-1 mt-5">
+      <div class="card-body">
+          <form [formGroup]="updateProductForm" (ngSubmit)="onSubmit()">
+              <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Product Id</label>
+                  <div class="col-sm-1">
+                      <input type="text" class="form-control" placeholder="Enter product Id" [(ngModel)]="productId" [ngModelOptions]="{standalone: true}" (ngModelChange)="findProduct($event)">
+                  </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Product Name</label>
+                      <div class="col-sm-1">
+                          <input type="text" class="form-control" placeholder="Enter product name" [(ngModel)]="productName" formControlName="productName">
+                      </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Quantity Available</label>
+                      <div class="col-sm-1">
+                          <input type="text" class="form-control"  placeholder="Enter Quantity Available" [(ngModel)]="quantityAvailable" formControlName="quantityAvailable">
+                      </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Price</label>
+                      <div class="col-sm-1">
+                          <input type="text" class="form-control"  placeholder="Enter Price" [(ngModel)]="productPrice" formControlName="price">
+                      </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Description</label>
+                      <div class="col-sm-1">
+                          <textarea class="form-control"  placeholder="Enter Product Description" [(ngModel)]="productDescription" formControlName="description"></textarea>
+                      </div>
+              </div>
+              <br>
+              <div class="row justify-content-center">
+                  <div class="col-4">
+                      <button type="submit" class="btn btn-primary" [disabled]="!updateProductForm.valid">Update Product</button>&nbsp;&nbsp;
+                      <button (click)="onReset()" class="btn btn-warning" type="reset">Reset</button>
+                  </div>
+              </div>  
+              <br>
+              <p class="text blue">Value: {{ updateProductForm.value | json }}</p>
+              <p class="text blue">Value: {{ updateProductForm.valid | json }}</p>
+          </form>
+      </div>
+  </div>
+</div>

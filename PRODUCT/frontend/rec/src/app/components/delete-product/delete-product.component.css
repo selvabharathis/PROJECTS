@@ -1,0 +1,17 @@
+input,textarea{
+    width:fit-content;
+}
+
+.deleteProduct{
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+.card-body{
+    min-width: fit-content;
+    max-height: fit-content;
+}
+
+.card{
+    width: 800px;
+}

@@ -1,5 +1,5 @@
 <br><br>
-<div *ngIf="products.length!=null && products.length>0">
+<div *ngIf="products.length!=null && products.length>0; else startSpinner">
     <div class="row">
         <div class="card-group">
         <div *ngFor="let product of products">
@@ -15,6 +15,10 @@
         </div>    
     </div>
     </div>
-
 </div>
-
+<ng-template #startSpinner>
+    <div class="text-center" >
+        <div class="spinner-border text-primary" role="status">
+        </div>
+    </div>
+</ng-template>
