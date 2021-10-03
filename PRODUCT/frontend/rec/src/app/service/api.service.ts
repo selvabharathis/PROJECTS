@@ -8,31 +8,31 @@ import { ApiTemplateService } from './api-template.service';
 })
 export class ApiService {
 
-  constructor(public apiService: ApiTemplateService) { }
+  constructor(public apiTemplateService: ApiTemplateService) { }
 
   getProducts(){
     let url = environment.productAPIUrl + '/getProducts';
-    return this.apiService.getData<Product[]>(url);
+    return this.apiTemplateService.getData<Product[]>(url);
   }
 
   getProduct(productId: number){
     let url = environment.productAPIUrl + `/${productId}`;
-    return this.apiService.getData<Product>(url)
+    return this.apiTemplateService.getData<Product>(url)
   }
 
   deleteProduct(productId: number){
     let url = environment.productAPIUrl + `/deleteProduct/${productId}`;
-    return this.apiService.deleteData(url);
+    return this.apiTemplateService.deleteData(url);
   }
 
   saveProduct(product: Product){
     let url = environment.productAPIUrl + `/addNewProduct`;
-    return this.apiService.postData(url,product);
+    return this.apiTemplateService.postData(url,product);
   }
 
   updateProduct(product: Product){
     let url = environment.productAPIUrl + `/updateProduct/${product.productId}`;
-    return this.apiService.putData(url,product);
+    return this.apiTemplateService.putData(url,product);
   }
 
 }
